@@ -24,4 +24,22 @@ public class UserController {
     public String user(){
         return "用户权限访问";
     }
+
+    @GetMapping("/showMember")
+    public String showMember(){
+        return "showMember";
+    }
+    @GetMapping("/addMember")
+    public String addMember(){
+        return "addMember";
+    }
+    @GetMapping("/updateMember")
+    public String updateMember(){
+        return "updateMember";
+    }
+    @GetMapping("/delMember")
+    public String delMember(){
+        return "delMember";
+    }
+
 }
