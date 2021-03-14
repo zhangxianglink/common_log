@@ -14,9 +14,14 @@ public class UserController {
     @Autowired
     private UserMapper userMapper;
 
-    @GetMapping("/test")
-    public String selectUser(){
+    @GetMapping("/admin")
+    public String admin(){
         List<User> userdao = userMapper.selectAllUser();
         return userdao.toString();
+    }
+
+    @GetMapping("/user")
+    public String user(){
+        return "用户权限访问";
     }
 }

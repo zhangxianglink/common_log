@@ -21,16 +21,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication().withUser("admin").password("123456")
-                .authorities("/");
+                .authorities("admin","user");
         auth.inMemoryAuthentication().withUser("user").password("123456")
-                .authorities("/");
+                .authorities("user");
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 //        http.authorizeRequests().antMatchers("/**").fullyAuthenticated()
 //                .and().httpBasic();
-        http.authorizeRequests().antMatchers("/**").fullyAuthenticated()
+        http.authorizeRequests().antMatchers("/admin").hasAnyAuthority("admin")
+                .antMatchers("/user").hasAnyAuthority("user")
+                .antMatchers("/**").fullyAuthenticated()
                 .and().formLogin();
     }
 }
