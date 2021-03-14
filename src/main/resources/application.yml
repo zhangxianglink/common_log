@@ -11,7 +11,7 @@ spring:
     #druid相关配置
     username: root
     password: WVMjPhfXQrIsWRo0/RCqAVvYtTU9WNVToKJohb8AlUmHwnV6vwFL+FM2CNFDMJwGHW1iCmyaUlF+sgvFdogqEA==
-    url: jdbc:mysql://101.133.132.255:3306/scenter?useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://sss.sss.sss.sss:3306/scenter?useUnicode=true&characterEncoding=utf8
     druid:
       #监控统计拦截的filters
       filters: stat
