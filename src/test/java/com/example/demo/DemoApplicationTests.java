@@ -43,7 +43,7 @@ class DemoApplicationTests {
                 .setIssuedAt(now)           //iat: jwt的签发时间
                 .setSubject("subject")        //sub(Subject)：代表这个JWT的主体，即它的所有人，这个是一个json格式的字符串，可以存放什么userid，roldid之类的，作为什么用户的唯一标志。
                 .signWith(signatureAlgorithm, key);//设置签名使用的签名算法和签名使用的秘钥
-        long ttlMillis = 1000 * 120;
+        long ttlMillis = 1000 * 2;
         if (ttlMillis >= 0) {
             long expMillis = nowMillis + ttlMillis;
             Date exp = new Date(expMillis);
@@ -69,8 +69,18 @@ class DemoApplicationTests {
     public static void main(String[] args) throws Exception {
         String jwt = JwtCreate();
         System.out.println("jwt:  " + jwt);
-        Claims claims = parseJWT(jwt);
-        System.out.println("claims: " + claims.toString());
+        new Thread(() -> {
+            try {
+                Thread.sleep(3000);
+                Claims claims = parseJWT(jwt);
+                System.out.println("claims: " + claims.toString());
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }).start();
+
     }
 
 
