@@ -71,7 +71,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             expressionInterceptUrlRegistry.antMatchers(permissionEntity.getUrl())
                     .hasAnyAuthority(permissionEntity.getPermTag());
         });
-        expressionInterceptUrlRegistry.antMatchers("/**").fullyAuthenticated()
+        expressionInterceptUrlRegistry.anyRequest().authenticated()
                 .and().formLogin().and().csrf().disable();
 
     }
