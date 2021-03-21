@@ -11,7 +11,7 @@ spring:
     #druid相关配置
     username: root
     password: WVMjPhfXQrIsWRo0/RCqAVvYtTU9WNVToKJohb8AlUmHwnV6vwFL+FM2CNFDMJwGHW1iCmyaUlF+sgvFdogqEA==
-    url: jdbc:mysql://sss.sss.sss.sss:3306/scenter?useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://101.133.132.255:3306/scenter?useUnicode=true&characterEncoding=utf8
     druid:
       #监控统计拦截的filters
       filters: stat
@@ -39,6 +39,11 @@ spring:
       #打开PSCache，并指定每个连接上PSCache的大小。oracle设为true，mysql设为false。分库分表较多推荐设置为false
       pool-prepared-statements: false
       max-pool-prepared-statement-per-connection-size: 20
+  redis:
+    host: 101.133.132.255
+    port: 6379
+    password: redispwd
+
 
 
 mybatis:
