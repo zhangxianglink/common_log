@@ -65,7 +65,7 @@ public class UserLogAdvice {
     }
 
     @Around("userLog()")
-    public Object userDoing(ProceedingJoinPoint point){
-        point.getTarget().
+    public Object userDoing(ProceedingJoinPoint point) throws Throwable {
+        return point.proceed();
     }
 }
