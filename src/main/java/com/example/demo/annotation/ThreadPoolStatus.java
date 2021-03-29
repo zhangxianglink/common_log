@@ -5,7 +5,7 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(value = {ElementType.METHOD})
 @Documented
-public @interface UserLog {
+public @interface ThreadPoolStatus {
 
     String value() default "";
 }

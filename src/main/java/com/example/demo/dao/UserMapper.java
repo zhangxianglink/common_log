@@ -2,7 +2,6 @@ package com.example.demo.dao;
 
 import com.example.demo.model.PermissionEntity;
 import com.example.demo.model.User;
-import com.example.demo.model.UserEntity;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
@@ -13,16 +12,7 @@ import java.util.List;
 public interface UserMapper {
 
     List<User> selectAllUser();
-
-    /**
-     * 根据用户名称查询
-     *
-     * @param userName
-     * @return
-     */
-    @Select(" select * from sys_user where username = #{userName}")
-    UserEntity findByUsername(@Param("userName") String userName);
-
+    
     /**
      * 查询用户的权限根据用户查询权限
      *

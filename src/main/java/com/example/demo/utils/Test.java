@@ -6,8 +6,9 @@ import java.sql.*;
 
 public class Test {
     public static void main(String[] args) throws Exception {
-        test1();
-        test1();
+        System.out.println(Runtime.getRuntime().availableProcessors());
+//        test1();
+//        test1();
     }
 
     public static void test1() {
